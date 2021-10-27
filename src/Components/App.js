@@ -69,18 +69,17 @@ function App() {
            <Switch>
               <Route path='/cart'>
             {cart !== null ?
-              cart.map((item, index) =>
+              cart.map((product, index) =>
                 <Cart
                   key={index}
                   index={index}
-                  item={item}
+                  product={product}
                   removeFromCart={removeFromCart}
                 />
               )
               :
               'Your Cart is Empty'}
             <div className="fw-bold fs-3">Total: ${total()}</div>
-
           </Route>
           <Route path='/products'>
             <h2 className="fw-bold">Product List</h2>
@@ -93,7 +92,6 @@ function App() {
               />
             )}
           </Route>
-
           <Route path='/product/:id'>
             <Product
             productsList={productsList} 

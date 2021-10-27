@@ -7,7 +7,7 @@ function ProductsPage({product, addToCart, index}) {
     return (
         <div>
             <div className="col border p-3">
-                <Link className="fw-bold" to={`product/${product.id}`}>
+                <Link className="fs-3 fw-bold" to={`/product/${product.id}`}>
                     {product.name}
                 </Link>
                 <div className="fs-6 fst-italic">

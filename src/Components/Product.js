@@ -1,14 +1,15 @@
 import React from 'react';
 import {  useParams } from 'react-router-dom';
 
-function Product({productList, addToCart}) {
+function Product({productsList, addToCart}) {
 
     let { id } = useParams();
-    const product = productList.find(item => item.id === parseInt(id));
+    const product = productsList.find(item => item.id === parseInt(id));
 
     return (
              <div className="container">
-        {console.log(id, productList, product)}
+        {console.log(id, productsList, product)}
+        {product !== undefined ?
             <div className="row">
                 <div className="col">
                     <div>
@@ -18,11 +19,15 @@ function Product({productList, addToCart}) {
                         {product.description}
                     </div>
                     <div>
-                        {product.price}
-                         {/* <button type="button" className="btn btn-outline-primary btn-sm mt-2" onClick={() => addToCart(index)}>Add to Cart</button> */}
+                        {product.price.toFixed(2)}
+                         <button type="button" className="btn btn-outline-primary btn-sm mt-2" 
+                         onClick={() => addToCart(productsList.findIndex((el) => el.id === parseInt(id)))}>Add to Cart</button>
                 </div>
             </div>
           </div>  
+          :
+          'Page Loading'
+        }
         </div>
     )
 }
