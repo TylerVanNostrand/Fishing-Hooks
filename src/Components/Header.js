@@ -23,6 +23,9 @@ function Header() {
                     </div>
                 </div>
             </nav>
+            <div className="d-flex">
+            <img className="img-fluid mainImage" src="./Img/fishsign.jpg" alt=" " />
+            </div>
         </div>
     )
 }

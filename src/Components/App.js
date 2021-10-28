@@ -38,7 +38,10 @@ function App() {
 
   const addToCart = (index) => {
     // console.log(cart);
-    let temp = [...cart] || [];
+     let temp = [];
+    if (cart !== null) {
+      temp = [...cart]
+    }
     temp.push(productsList[index])
     console.log(temp);
     updateCart(temp);
@@ -68,6 +71,7 @@ function App() {
           <Header />
            <Switch>
               <Route path='/cart'>
+              <h2 className="fw-bold mt-3">Cart</h2>
             {cart !== null ?
               cart.map((product, index) =>
                 <Cart
@@ -77,8 +81,7 @@ function App() {
                   removeFromCart={removeFromCart}
                 />
               )
-              :
-              'Your Cart is Empty'}
+              : 'Your Cart is Empty'}
             <div className="fw-bold fs-3">Total: ${total()}</div>
           </Route>
           <Route path='/products'>
