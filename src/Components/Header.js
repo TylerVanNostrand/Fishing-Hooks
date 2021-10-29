@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-export default function Header() {
+function Header() {
     return (
           <header className='header text-center'>
         <title className='text-center'> Lt. Dan's  Bait  Tackle</title>
@@ -29,3 +29,4 @@ export default function Header() {
     )
 }
 
+export default Header

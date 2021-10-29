@@ -75,11 +75,11 @@ function App() {
             <Switch>
                  <Route exact path='/'>
             <Splash />
-          </Route>
+            </Route>
               <Route path='/cart'>
                 <h2 className="fw-bold mt-3">Cart</h2>
-                {cart !== null ?
-                cart.map((product, index) =>
+                    {cart !== null ?
+                    cart.map((product, index) =>
                 <Cart
                   key={index}
                   index={index}
@@ -92,7 +92,7 @@ function App() {
           </Route>
           <Route path='/products'>
             <h2 className="fw-bold">Product List</h2>
-            {productsList.map((product, index) =>
+                {productsList.map((product, index) =>
               <ProductsPage
                 key={index}
                 index={index}
@@ -105,8 +105,8 @@ function App() {
             <ul>
              <Row className='g-4'> 
             <Product
-            productsList={productsList} 
-            addToCart={addToCart}/>
+                productsList={productsList} 
+                addToCart={addToCart}/>
             </Row>   
             </ul>
           </Route>
