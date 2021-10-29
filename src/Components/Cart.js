@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Form, Row, Col, Button } from 'react-bootstrap';
+// import { Form, Row, Col, Button } from 'react-bootstrap';
 
 
 function Cart({product, removeFromCart, index}) {
@@ -17,7 +17,7 @@ function Cart({product, removeFromCart, index}) {
                     Remove from cart
             </div>
         <div>
-                <Form>
+                {/* <Form>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Email</Form.Label>
@@ -81,7 +81,7 @@ function Cart({product, removeFromCart, index}) {
                     Back to Products
                 </Button>
 
-            </Form>
+            </Form> */}
             </div>
         </div>
     )

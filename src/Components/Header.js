@@ -5,10 +5,10 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 export default function Header() {
     return (
           <header className='header text-center'>
-        <title className='text-center'> Lt. Dan's  Bait | Tackle</title>
+        <title className='text-center'> Lt. Dan's  Bait  Tackle</title>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/Splash">Lt. Dan's Bait | Tackle</Navbar.Brand>
+                    <Navbar.Brand href="/Splash">Lt. Dan's Bait  Tackle</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
