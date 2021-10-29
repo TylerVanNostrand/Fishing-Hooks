@@ -21,9 +21,9 @@ export default function Header() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <h1 className='text-center'>Welcome to Lt. Dan's.</h1>
+            <h1 className='text-center'>Lt. Dan's Bait and Tackle.</h1>
             <div className="d-flex">
-            <img className="img-fluid mainImage" src="./Img/fishsign.jpg" alt=" " />
+            <img className="img-fluid mainImage" src="./Img/fishsign.jpg" class="rounded mx-auto d-block" alt=" " />
             </div>
         </header>
     )
