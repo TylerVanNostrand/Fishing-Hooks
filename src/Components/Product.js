@@ -8,8 +8,8 @@ function Product({productsList, addToCart}) {
 
     return (
              <div className="container">
-        {console.log(id, productsList, product)}
-        {product !== undefined ?
+                {console.log(id, productsList, product)}
+                {product !== undefined ?
             <div className="row">
                 <div className="col">
                     <div className="fs-3 fw-bold">
@@ -19,7 +19,7 @@ function Product({productsList, addToCart}) {
                         {product.description}
                     </div>
                     <div className="fs-6 fst-italic">
-                        {product.price.toFixed(2)}
+                        ${product.price.toFixed(2)}
                          <button type="button" className="btn btn-outline-primary btn-sm mt-2" 
                          onClick={() => addToCart(productsList.findIndex((el) => el.id === parseInt(id)))}>Add to Cart</button>
                 </div>

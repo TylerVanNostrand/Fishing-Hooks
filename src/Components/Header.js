@@ -1,33 +1,31 @@
 import React from 'react'
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-function Header() {
-
+export default function Header() {
     return (
-        <div>
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" to={'/'}>Master Baiter's Hookers and Lures</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <Link className="nav-link" aria-current="page" to={'/products/'}>Products</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/cart/'}>Shopping Cart</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+          <header className='header text-center'>
+        <title className='text-center'> Lt. Dan's  Bait | Tackle</title>
+            <Navbar bg="light" expand="lg">
+                <Container>
+                    <Navbar.Brand href="/Splash">Lt. Dan's Bait | Tackle</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+
+                            <Link className='btn btn-outline-secondary' to="/products" activeClassName="selected">Products</Link>&nbsp;
+                            <br />
+                            <Link className='btn btn-outline-secondary' to="/cart" activeClassName="selected">Your Cart</Link>
+
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <h1 className='text-center'>Welcome to Lt. Dan's.</h1>
             <div className="d-flex">
             <img className="img-fluid mainImage" src="./Img/fishsign.jpg" alt=" " />
             </div>
-        </div>
+        </header>
     )
 }
 
-export default Header;

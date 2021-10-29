@@ -1,11 +1,14 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Row } from 'react-bootstrap'
 import ProductsPage from './ProductsPage';
 import Cart from './Cart';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Product from './Product';
 import Header from './Header';
+import Splash from './Splash';
+
+
 
 function App() {
     const [productsList, setProductsList] = useState([]);
@@ -65,15 +68,18 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <>
 
       <Router>
           <Header />
-           <Switch>
+            <Switch>
+                 <Route exact path='/'>
+            <Splash />
+          </Route>
               <Route path='/cart'>
-              <h2 className="fw-bold mt-3">Cart</h2>
-            {cart !== null ?
-              cart.map((product, index) =>
+                <h2 className="fw-bold mt-3">Cart</h2>
+                {cart !== null ?
+                cart.map((product, index) =>
                 <Cart
                   key={index}
                   index={index}
@@ -90,19 +96,23 @@ function App() {
               <ProductsPage
                 key={index}
                 index={index}
-                  product={product}
+                product={product}
                 addToCart={addToCart}
               />
             )}
           </Route>
           <Route path='/product/:id'>
+            <ul>
+             <Row className='g-4'> 
             <Product
             productsList={productsList} 
             addToCart={addToCart}/>
+            </Row>   
+            </ul>
           </Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 
